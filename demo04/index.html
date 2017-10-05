@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloMessage = React.createClass({
+        render: function() {
+          console.log(this.props)
+          return (
+            <div>
+            <h1>Hello {this.props.name} </h1>
+            <span>username:{this.props.login.user}</span>
+            </div>
+          );
+        }
+      });
+      var data = {user:'alan',password: 'pass'}
+
+      ReactDOM.render(
+        <HelloMessage name="John" login={data}/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
